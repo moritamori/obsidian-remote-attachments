@@ -1,0 +1,11 @@
+{
+	"id": "remote-attachments",
+	"name": "Remote Attachments",
+	"version": "1.0.0",
+	"minAppVersion": "1.0.0",
+	"description": "Upload attachments to S3-compatible storage (like AWS S3 or Cloudflare R2) and replace local links with remote URLs.",
+	"author": "moritamori",
+	"authorUrl": "https://github.com/moritamori",
+	"fundingUrl": "https://www.buymeacoffee.com/moritamori",
+	"isDesktopOnly": false
+}
