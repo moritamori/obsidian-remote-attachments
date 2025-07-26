@@ -1,0 +1,28 @@
+{
+	"name": "obsidian-remote-attachments",
+	"version": "1.0.0",
+	"description": "Upload attachments to S3-compatible storage (like AWS S3 or Cloudflare R2) and replace local links with remote URLs.",
+	"main": "main.js",
+	"scripts": {
+		"dev": "node esbuild.config.mjs",
+		"build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
+		"version": "node version-bump.mjs && git add manifest.json versions.json"
+	},
+	"keywords": [],
+	"author": "moritamori",
+	"license": "MIT",
+	"dependencies": {
+		"@aws-sdk/client-s3": "^3.441.0",
+		"@aws-sdk/lib-storage": "^3.441.0"
+	},
+	"devDependencies": {
+		"@types/node": "^16.11.6",
+		"@typescript-eslint/eslint-plugin": "5.29.0",
+		"@typescript-eslint/parser": "5.29.0",
+		"builtin-modules": "3.3.0",
+		"esbuild": "0.17.3",
+		"obsidian": "latest",
+		"tslib": "2.4.0",
+		"typescript": "4.7.4"
+	}
+}
