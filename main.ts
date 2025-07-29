@@ -12,7 +12,7 @@ import {
 
 import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3';
 
-interface MyPluginSettings {
+interface RemoteAttachmentsSettings {
 	r2Config: {
 		bucketName: string;
 		accessKeyId: string;
@@ -24,7 +24,7 @@ interface MyPluginSettings {
 	};
 }
 
-const DEFAULT_SETTINGS: MyPluginSettings = {
+const DEFAULT_SETTINGS: RemoteAttachmentsSettings = {
 	r2Config: {
 		bucketName: '',
 		accessKeyId: '',
@@ -36,14 +36,14 @@ const DEFAULT_SETTINGS: MyPluginSettings = {
 	}
 }
 
-export default class MyPlugin extends Plugin {
-	settings: MyPluginSettings;
+export default class RemoteAttachments extends Plugin {
+	settings: RemoteAttachmentsSettings;
 
 	async onload() {
 		await this.loadSettings();
 
 		// This adds a settings tab so the user can configure various aspects of the plugin
-		this.addSettingTab(new SampleSettingTab(this.app, this));
+		this.addSettingTab(new RemoteAttachmentsSettingTab(this.app, this));
 
 		// Handle drag and drop events at the DOM level
 		this.setupDragDropHandlers();
@@ -228,10 +228,10 @@ export default class MyPlugin extends Plugin {
 	}
 }
 
-class SampleSettingTab extends PluginSettingTab {
-	plugin: MyPlugin;
+class RemoteAttachmentsSettingTab extends PluginSettingTab {
+	plugin: RemoteAttachments;
 
-	constructor(app: App, plugin: MyPlugin) {
+	constructor(app: App, plugin: RemoteAttachments) {
 		super(app, plugin);
 		this.plugin = plugin;
 	}
